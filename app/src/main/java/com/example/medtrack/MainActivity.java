@@ -4,15 +4,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    private String[] arr = {"item 1", "item 2", "item 3", "item 4"};
+    private List<Event> events;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.activity_main, arr);
+        EventAdapter eventListAdapter = new EventAdapter(this, R.layout.event_list_item, events);
     }
 }
